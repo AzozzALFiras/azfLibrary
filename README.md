@@ -5,6 +5,8 @@ Open the Sandbox with in apps and many more features to help developers
 - First you need to download the library.
 - add bundle library to conter file 
 - like it ``` Depends: mobilesubstrate, co.azozzalfiras.azflibrary```
+- you can see library on Pakcix 
+- https://repo.packix.com/package/co.azozzalfiras.azflibrary/
 
 # Features:
 - Get udid.
@@ -31,3 +33,35 @@ if(udid && device){
 // do something
 }
 ```
+
+
+# Import video & audio to Music App
+- for example 
+```objective-c
+
+NSString *pathAuido = @"/var/azfLibrary/audio.m4a";
+NSString *imageAuido = @"/var/azfLibrary/audio.png"
+NSURL *url = [NSURL URLWithString:@"http://127.0.0.1:1357/"];
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:60.0];
+[request setHTTPMethod:@"POST"];
+[request setHTTPBody:[NSJSONSerialization dataWithJSONObject:@{@"path": pathAuido?:@"",	@"metadata": imageAuido?:@""} options:0 error:nil]];
+NSData *receivedData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil]?:[NSData data];
+NSDictionary *jsonResp = [NSJSONSerialization JSONObjectWithData:receivedData options:0 error:nil]?:@{};
+if([jsonResp[@"status"]?:@NO boolValue]) {
+// imported
+} else {
+  // Import Failed
+}
+```
+
+
+# Export link player video on safari
+- for example 
+```objective-c
+
+NSDictionary* urlDic = [[NSDictionary alloc] initWithContentsOfFile:[NSTemporaryDirectory() stringByAppendingPathComponent:@"AFSocial_current_play.link"]]?:@{};
+NSString* mediaURLSt = urlDic[@"url"];
+NSString* filename = [NSString stringWithFormat:@"%@", [[NSURL URLWithString:mediaURLSt?:@""] lastPathComponent]];
+NSLog(@"%@",filename);
+```
+
