@@ -1,5 +1,5 @@
 # azfLibrary
-Open the Sandbox with in apps and many more features to help developers 
+Support library to allow tweaks to communicate with their services from sandboxed app processes
 
 # informations
 - First you need to download the library.
