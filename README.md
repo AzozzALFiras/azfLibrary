@@ -74,9 +74,8 @@ NSLog(@"%@",filename);
 
 // this path for save
 NSString *pathFileVideo = @"/var/azfLibrary/Video.mp4";
+
 // if is video you need to set BOOL isFileVideo = YES; and if is image you need tp set BOOL isFileVideo = NO; 
-
-
 BOOL isFileVideo = YES;
 
 NSURL *url = [NSURL URLWithString:[@"http://127.0.0.1:1357/" stringByAppendingPathComponent:@"cameraImport"]];
