@@ -5,7 +5,7 @@ Support library to allow tweaks to communicate with their services from sandboxe
 - First you need to download the library.
 - add bundle library to conter file 
 - like it ``` Depends: mobilesubstrate, co.azozzalfiras.azflibrary```
-- you can see library on Pakcix 
+- you can see library on Mohaddam 
 - [https://mokaddam.firepo.me/](https://mokaddam.firepo.me/)
 
 # Features:
